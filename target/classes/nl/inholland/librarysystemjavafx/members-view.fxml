@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.inholland.librarysystemjavafx.controller.MembersViewController">
+    <children>
+        <AnchorPane prefHeight="108.0" prefWidth="800.0" style="-fx-background-color: #000000;">
+            <children>
+                <Label layoutX="26.0" layoutY="19.0" prefHeight="70.0" prefWidth="246.0" text="Library System" textFill="WHITE">
+                    <font>
+                        <Font name="Arial" size="30.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Label>
+                <ButtonBar layoutX="342.0" layoutY="53.0" prefHeight="40.0" prefWidth="420.0">
+                    <buttons>
+                        <Button fx:id="tabBtnLendingReceiving" mnemonicParsing="false" onAction="#onLendingReceivingTabButtonClicked" prefWidth="145.0" style="-fx-background-color: #D3D3D3;" text="Lending/Receiving" textFill="black" />
+                        <Button fx:id="tabBtnCollection" mnemonicParsing="false" onAction="#onCollectionTabButtonClicked" prefWidth="145.0" style="-fx-background-color: #D3D3D3;" text="Collection" textFill="black" />
+                        <Button fx:id="tabBtnMembers" mnemonicParsing="false" onAction="#onMembersTabButtonClicked" prefWidth="145.0" style="-fx-background-color: #D3D3D3;" text="Members" textFill="black" />
+                    </buttons>
+                </ButtonBar>
+            </children>
+        </AnchorPane>
+        <Label fx:id="lblWelcome" layoutX="14.0" layoutY="116.0" prefHeight="38.0" prefWidth="778.0" text="Members">
+            <font>
+                <Font size="26.0" />
+            </font>
+        </Label>
+        <TableView fx:id="membersTableView" layoutX="14.0" layoutY="169.0" onMouseClicked="#onRowButtonClicked" prefHeight="344.0" prefWidth="769.0">
+            <columns>
+                <TableColumn fx:id="tblcolIdentifier" prefWidth="75.0" text="Identifier" />
+                <TableColumn fx:id="tblcolFirstName" prefWidth="150.0" text="First name" />
+                <TableColumn fx:id="tblcolLastName" prefWidth="150.0" text="Last name" />
+                <TableColumn fx:id="tblcolBirthDate" prefWidth="170.0" text="Birth date" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnAddMember" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" onAction="#onAddMemberButtonClicked" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #556EEA;" text="Add member" textFill="WHITE" />
+        <Button fx:id="btnEditMember" layoutX="118.0" layoutY="539.0" mnemonicParsing="false" onAction="#onEditMemberButtonClicked" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #A5A6A9;" text="Edit member" textFill="WHITE" />
+        <Button fx:id="btnDeleteMember" layoutX="221.0" layoutY="539.0" mnemonicParsing="false" onAction="#onDeleteMemberButtonClicked" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #E54444;" text="Delete member" textFill="WHITE" />
+      <TextField fx:id="txtFirstName" layoutX="375.0" layoutY="539.0" prefHeight="26.0" prefWidth="117.0" promptText="First name" />
+      <TextField fx:id="txtLastName" layoutX="507.0" layoutY="539.0" prefHeight="26.0" prefWidth="118.0" promptText="Last name" />
+      <DatePicker fx:id="txtDatePicker" layoutX="644.0" layoutY="539.0" prefHeight="26.0" prefWidth="140.0" promptText="Date of birth" />
+      <Label fx:id="lblError" layoutX="448.0" layoutY="126.0" prefHeight="18.0" prefWidth="333.0" style="-fx-text-fill: red;" />
+      <TextField fx:id="txtSearchField" layoutX="140.0" layoutY="123.0" prefHeight="26.0" prefWidth="154.0" promptText="search by first/last name...." />
+    </children>
+</AnchorPane>
